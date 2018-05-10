@@ -1,4 +1,4 @@
-var md = require('./md');
+import md from './md';
 
 md();
 
