@@ -41,10 +41,11 @@ export default function g () {
     1、controller上还是需要查询dom、操作dom，所以会出现mvvm，采用数据和View绑定式开发，让开发人员彻底抛弃dom，同时在渲染上采取了虚拟dom技术，大大的提高了性能
     2、1份数据对应多个view
       可以将多个view统一放到1个大的View中，并且绑定model,其他子View中对model进行绑定 change事件，如果相同的字段改变，那么所有view都会更新，通常这个大view是PageView
+      不存在1个view对应多个model，尽量拆成1个视图对应1个view
     3、子视图事件委托给父视图
       父视图绑定事件，子视图的template包含model的id，点击处理器的时候，根据此id获取model
     4、backbone管理子视图和嵌套子视图
-      
+      父view模板中声明装载子view的容器，先渲染父视图，再渲染子视图，父视图对每个子视图进行引用，子视图直接彼此独立
   */
 
 
